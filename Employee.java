@@ -6,10 +6,10 @@ class Employee{
     int emp_code;
     String name;
     String cmp_name;
-    double phone;
+    long phone;
     String email;
 
-    Employee(int emp_code,String name,String cmp_name,double phone,String email){
+    Employee(int emp_code,String name,String cmp_name,long phone,String email){
         this.emp_code=emp_code;
         this.name = name;
         this.phone = phone;
@@ -23,6 +23,9 @@ class Employee{
         System.out.println("company name: "+cmp_name);
         System.out.println("phone: "+phone);
         System.out.println("email: "+email);
+        System.out.println();
+        System.out.println("-------------");
+        
 
     }
 
@@ -32,7 +35,7 @@ public static void main(String[] args) {
 
     ArrayList<Employee> emp_list = new ArrayList<Employee>();
     int choice = 0;
-while(choice!=6){
+while(choice!=5){
         System.out.println("Employee");
         System.out.println("-------------");
         System.out.println();
@@ -54,16 +57,20 @@ while(choice!=6){
                 System.out.println("Company name: ");
                 String cmp_name = sc1.nextLine();
                 System.out.println("phone: ");
-                Double phone=sc1.nextDouble();
+                long phone=sc1.nextLong();
                 System.out.println("email: ");
                 String email = sc1.nextLine();
 
                 emp_list.add(new Employee(emp_code, name, cmp_name, phone, email));
             }
-            
+            case 2:
+            {
+                for(Employee i:emp_list){
+                    i.display();
+                }
+            }
             
 
-            emp_list.get(0).display();
         }
 
 
