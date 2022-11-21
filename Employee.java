@@ -69,6 +69,16 @@ while(choice!=5){
                     i.display();
                 }
             }
+            case 3:{
+                System.out.println("enter emp code");
+                int emp = sc.nextInt();
+                for(Employee i:emp_list){
+                    if (i.emp_code==emp){
+                        i.display();
+                        break;
+                    }
+                }
+            }
             
 
         }
