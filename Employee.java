@@ -67,9 +67,11 @@ while(choice!=5){
             {
                 for(Employee i:emp_list){
                     i.display();
+                    break;
                 }
             }
-            case 3:{
+            case 3:
+            {
                 System.out.println("enter emp code");
                 int emp = sc.nextInt();
                 for(Employee i:emp_list){
@@ -78,6 +80,19 @@ while(choice!=5){
                         break;
                     }
                 }
+                break;
+            }
+
+            case 4:{
+                System.out.println("enter emp code");
+                int emp_no = sc.nextInt();
+                for(Employee i:emp_list){
+                    if (i.emp_code==emp_no){
+                        emp_list.remove(i);
+                        break;
+                    }
+                }
+                break;
             }
             
 
