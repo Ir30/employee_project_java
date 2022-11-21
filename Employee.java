@@ -34,8 +34,7 @@ public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
 
     ArrayList<Employee> emp_list = new ArrayList<Employee>();
-    int choice = 0;
-while(choice!=5){
+while(true){
         System.out.println("Employee");
         System.out.println("-------------");
         System.out.println();
@@ -44,36 +43,48 @@ while(choice!=5){
         System.out.println("3:Search employee");
         System.out.println("4:Delete employee");
         System.out.println("5:Exit");
-
-        choice=sc.nextInt();
+        System.out.println("Employee");
+        System.out.println("-------------");
+        int choice=sc.nextInt();
 
         switch(choice){
             case 1:{
+
                 Scanner sc1 =new Scanner(System.in);
+
                 System.out.println("name: ");
                 String name = sc1.nextLine();
+
                 System.out.println("Empcode: ");
                 int emp_code = sc1.nextInt();
+
                 System.out.println("Company name: ");
-                String cmp_name = sc1.nextLine();
+                String cmp_name = sc1.next();
+
                 System.out.println("phone: ");
                 long phone=sc1.nextLong();
+
                 System.out.println("email: ");
-                String email = sc1.nextLine();
+                String email = sc1.next();
 
                 emp_list.add(new Employee(emp_code, name, cmp_name, phone, email));
+                break;
+
             }
-            case 2:
-            {
+
+            case 2:{
+
                 for(Employee i:emp_list){
                     i.display();
-                    break;
                 }
+                break;
             }
-            case 3:
-            {
+
+            case 3:{
+  
                 System.out.println("enter emp code");
                 int emp = sc.nextInt();
+
                 for(Employee i:emp_list){
                     if (i.emp_code==emp){
                         i.display();
@@ -81,9 +92,11 @@ while(choice!=5){
                     }
                 }
                 break;
+
             }
 
             case 4:{
+
                 System.out.println("enter emp code");
                 int emp_no = sc.nextInt();
                 for(Employee i:emp_list){
@@ -93,10 +106,16 @@ while(choice!=5){
                     }
                 }
                 break;
+
             }
-            
+
+            case 5:{
+                System.exit(0);
+            }
 
         }
+
+        
 
 
     }
